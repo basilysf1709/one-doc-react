@@ -1,38 +1,102 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaSchool } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaUniversity, FaBriefcase } from "react-icons/fa";
 import ReactDOMServer from "react-dom/server";
 
-const EducationComponent = () => {
+// const EducationComponent = () => {
 
-  const educationContainerStyle: React.CSSProperties = {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start", // Aligns children to the start of the container
-    alignItems: "flex-start",
-    padding: "0", // Add padding if needed
-    // ... other styles you might need
+//   const educationContainerStyle: React.CSSProperties = {
+//     fontFamily: "'Montserrat', sans-serif",
+//     display: "flex",
+//     flexDirection: "row",
+//     alignItems: "center",
+//   };
+
+//   const educationIconStyle: React.CSSProperties = {
+//     fontSize: "1em",
+//     marginRight: "8px",
+//   };
+
+//   const educationContentStyle: React.CSSProperties = {
+//     textAlign: "left",
+//     flex: 1,
+//   };
+
+//   const educationHeaderStyle: React.CSSProperties = {
+//     fontWeight: "bold",
+//   };
+
+//   const educationDetailsStyle: React.CSSProperties = {
+//   };
+
+//   const locationStyle: React.CSSProperties = {
+//     textAlign: "right",
+//   };
+
+//   return (
+//     <div style={educationContainerStyle}>
+//       <FaUniversity style={educationIconStyle} />
+//       <div style={educationContentStyle}>
+//         <h3 style={educationHeaderStyle}>University of Guelph</h3>
+//         <p style={educationDetailsStyle}>Bachelor of Computing, Computer Science and Economics</p>
+//         <p style={educationDetailsStyle}>cGPA: 4.0</p>
+//       </div>
+//       <div style={locationStyle}>
+//         <p>Guelph, Ontario</p>
+//         <p>Canada</p>
+//       </div>
+//     </div>
+//   );
+// };
+
+const ExperienceComponent = () => {
+  const experienceContainerStyle: React.CSSProperties = {
+    fontFamily: "'Montserrat', sans-serif",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: '20px', // Adjust as needed
+    flexWrap: 'wrap', // Allow the items to wrap if necessary
   };
 
-  const educationIconStyle: React.CSSProperties = {
-    marginRight: "8px", // Space between icon and text
-    // ... other styles you might need
+  const experienceContentStyle: React.CSSProperties = {
+    textAlign: 'left',
+    flex: 1, // Take up the remaining space
+    minWidth: '60%', // Ensure it doesn't get too small on large screens
   };
 
-  const educationContentStyle: React.CSSProperties = {
-    textAlign: "left",
-    // ... other styles you might need
+  const experienceHeaderStyle: React.CSSProperties = {
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem', // Space between icon and text
+  };
+
+  const experienceListStyle: React.CSSProperties = {
+    listStyleType: 'disc',
+    marginLeft: '20px',
+    fontWeight: 'normal',
+  };
+
+  const dateLocationStyle: React.CSSProperties = {
+    textAlign: 'right',
+    whiteSpace: 'nowrap',
+    flexShrink: 0, // Prevent this part from shrinking
+    marginLeft: '20px', // Ensure some space between the content and the dates
   };
 
   return (
-    <div style={educationContainerStyle}>
-      <FaSchool style={educationIconStyle} />
-      <div style={educationContentStyle}>
-        <h3>University of Guelph</h3>
-        <p>Bachelor of Computing, Computer Science and Economics</p>
-        <p>cGPA: 4.0</p>
-        <p>Skills</p>
-        {/* Add other content here */}
+    <div style={experienceContainerStyle}>
+      <div style={experienceContentStyle}>
+        <h3 style={experienceHeaderStyle}>
+          <img src="/assets/Deloitte_Logo.png" />
+          Deloitte
+        </h3>
+        <p>Software Engineer (DevOps / Infrastructure)</p>
+        <ul style={experienceListStyle}>
+          <li>Transitioned from manual deployments to Continuous Deployment (CD) by building a Deployment Pipeline that tests and deploys directly to AWS infrastructure, reducing deployment time from 20 minutes to lt 5 minutes</li>
+          <li>Implemented an Application Load Balancer in AWS for efficient traffic distribution across multiple Fargate instances, reducing downtime from 15 minutes to 0 seconds for each deployment</li>
+        </ul>
       </div>
     </div>
   );
@@ -97,6 +161,7 @@ const ResumeComponent = () => {
           </a>
         </div>
       </div>
+      <ExperienceComponent />
     </div>
   );
 };

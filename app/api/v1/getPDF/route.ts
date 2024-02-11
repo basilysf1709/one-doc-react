@@ -16,6 +16,10 @@ export async function POST(request: any) {
         path: "./assets/util.css",
         content: readFileSync(join(process.cwd(), "/assets/util.css")).toString(),
       },
+      {
+        path: "./assets/Deloitte_Logo.png",
+        content: readFileSync(join(process.cwd(), "/assets/Deloitte_Logo.png")).toString(),
+      },
     ],
   });
 
