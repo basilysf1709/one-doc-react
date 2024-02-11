@@ -49,58 +49,6 @@ import ReactDOMServer from "react-dom/server";
 //   );
 // };
 
-const ExperienceComponent = () => {
-  const experienceContainerStyle: React.CSSProperties = {
-    fontFamily: "'Montserrat', sans-serif",
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: '20px', // Adjust as needed
-    flexWrap: 'wrap', // Allow the items to wrap if necessary
-  };
-
-  const experienceContentStyle: React.CSSProperties = {
-    textAlign: 'left',
-    flex: 1, // Take up the remaining space
-    minWidth: '60%', // Ensure it doesn't get too small on large screens
-  };
-
-  const experienceHeaderStyle: React.CSSProperties = {
-    fontWeight: 'bold',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem', // Space between icon and text
-  };
-
-  const experienceListStyle: React.CSSProperties = {
-    listStyleType: 'disc',
-    marginLeft: '20px',
-    fontWeight: 'normal',
-  };
-
-  const dateLocationStyle: React.CSSProperties = {
-    textAlign: 'right',
-    whiteSpace: 'nowrap',
-    flexShrink: 0, // Prevent this part from shrinking
-    marginLeft: '20px', // Ensure some space between the content and the dates
-  };
-
-  return (
-    <div style={experienceContainerStyle}>
-      <div style={experienceContentStyle}>
-        <h3 style={experienceHeaderStyle}>
-          <img src="/assets/Deloitte_Logo.png" />
-          Deloitte
-        </h3>
-        <p>Software Engineer (DevOps / Infrastructure)</p>
-        <ul style={experienceListStyle}>
-          <li>Transitioned from manual deployments to Continuous Deployment (CD) by building a Deployment Pipeline that tests and deploys directly to AWS infrastructure, reducing deployment time from 20 minutes to lt 5 minutes</li>
-          <li>Implemented an Application Load Balancer in AWS for efficient traffic distribution across multiple Fargate instances, reducing downtime from 15 minutes to 0 seconds for each deployment</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const ResumeComponent = () => {
 
@@ -122,7 +70,7 @@ const ResumeComponent = () => {
     marginBottom: "4px",
     width: "100%",
     display: "flex",
-    justifyContent: "center", // Centers children horizontally in the container
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: "column"
   };
@@ -138,6 +86,30 @@ const ResumeComponent = () => {
     margin: "0 5px",
     whiteSpace: "nowrap",
     color: "black",
+  };
+  const experienceContainerStyle: React.CSSProperties = {
+    fontFamily: "'Montserrat', sans-serif",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+  };
+
+  const experienceContentStyle: React.CSSProperties = {
+    textAlign: 'left',
+    flex: 1, 
+    minWidth: '60%',
+  };
+
+  const experienceHeaderStyle: React.CSSProperties = {
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+  };
+
+  const experienceListStyle: React.CSSProperties = {
+    marginLeft: '20px',
+    fontWeight: 'normal',
   };
   return (
     <div style={headerStyle}>
@@ -161,7 +133,6 @@ const ResumeComponent = () => {
           </a>
         </div>
       </div>
-      <ExperienceComponent />
     </div>
   );
 };
